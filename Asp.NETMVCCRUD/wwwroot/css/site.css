@@ -16,3 +16,30 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.form-group{
+    margin-bottom:20px;
+}
+
+.col-xxl-8 {
+    margin-left:-6.5rem !important;
+}
+
+
+.lowOp {
+    opacity: 0.8;
+    font-size: 12px;
+}
+
+.navText {
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    opacity:0.8;
+}
+
+.active {
+   text-decoration:underline #00ffff;
+}
