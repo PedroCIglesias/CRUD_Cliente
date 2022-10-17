@@ -1,0 +1,60 @@
+USE [dbTeste]
+GO
+
+/****** Object:  Table [dbo].[Cliente]    Script Date: 17/10/2022 14:06:31 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Cliente](
+	[ClienteId] [int] IDENTITY(1,1) NOT NULL,
+	[Nome] [varchar](50) NOT NULL,
+	[Tipo] [varchar](50) NOT NULL,
+	[TelefoneContato] [varchar](50) NOT NULL,
+	[DataCadastro] [date] NOT NULL,
+	[DataAtualizacao] [date] NULL,
+ CONSTRAINT [PK_Cliente] PRIMARY KEY CLUSTERED 
+(
+	[ClienteId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+
+
+
+
+USE [dbTeste]
+GO
+
+/****** Object:  Table [dbo].[Imoveis]    Script Date: 17/10/2022 14:08:11 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Imoveis](
+	[ImovelId] [int] IDENTITY(1,1) NOT NULL,
+	[ClienteId] [int] NOT NULL,
+	[Valor] [money] NOT NULL,
+	[Cidade] [varchar](50) NOT NULL,
+	[Bairro] [varchar](50) NOT NULL,
+	[Logradouro] [varchar](50) NOT NULL,
+	[Numero] [int] NOT NULL,
+	[DataCadastro] [date] NOT NULL,
+	[DataAtualizacao] [date] NULL,
+	[Nome] [varchar](50) NULL,
+ CONSTRAINT [PK_Imoveis] PRIMARY KEY CLUSTERED 
+(
+	[ImovelId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+---- Link arquivo compactado 
+https://drive.google.com/file/d/182GiTpt_wqkaj7IsGtzNZia7_DyoX3Bp/view?usp=sharing
