@@ -1,0 +1,86 @@
+﻿@model System.Data.DataTable
+
+@{
+    ViewData["Title"] = "Index";
+}
+<head>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+    <link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/lib/jquery-mask/dist/jquery.mask.min.js"></script>
+    <script src="~/lib/jquery-input-mask/dist/jquery.inputmask.js"></script>
+    <script src="~/lib/jquery-input-mask/dist/bindings/inputmask.binding.js"></script>
+    <script src="~/lib/jquery-datatables/datatables.min.js" defer></script>
+    <script src="~/js/imovelScr.js"></script>
+</head>
+<body>
+    <!-- Button trigger modal -->
+    <div class="row">
+        <label class="label" id="lblNomeCliente"></label>
+    </div>
+    <div class="row">
+        <div class="col-xxl-8">
+            <input type="text" class="form-control" id="pesquisa" oninput="filterGlobal()" placeholder="Pesquisar" />
+        </div>
+        <div class="col-xxl-4">
+            <div class="text-end">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addImovelModal">
+                    Adicionar novo imóvel
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ModalInserir -->
+    <div class="modal fade" id="addImovelModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Adicionar novo imóvel</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="label lowOp" for="nomeImovel">Nome do imóvel</label>
+                        <input type="text" class="form-control" id="nomeImovel" placeholder="Digite..." />
+
+                        <input type="text" class="form-control" id="clienteId" style="display:none" />
+                        <input type="text" class="form-control" id="imovelId" style="display:none" />
+                    </div>
+                    <div class="form-group">
+                        <label class="label lowOp" for="valor">Valor</label>
+                        <input type="text" class="form-control" id="valor" placeholder="Digite..." data-inputmask="'alias': 'numeric'"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="label lowOp" for="cidade">Cidade</label>
+                        <input type="text" class="form-control" id="cidade" placeholder="Digite..." />
+                    </div>
+                    <div class="form-group">
+                        <label class="label lowOp" for="bairro">Bairro</label>
+                        <input type="text" class="form-control" id="bairro" placeholder="Digite..." />
+                    </div>
+                    <div class="form-group">
+                        <label class="label lowOp" for="logradouro">Logradouro</label>
+                        <input type="text" class="form-control" id="logradouro" placeholder="Digite..." />
+                    </div>
+                    <div class="form-group">
+                        <label class="label lowOp" for="numero">Número</label>
+                        <input type="text" class="form-control" id="numero" placeholder="Digite..." data-inputmask="'alias': 'decimal'"/>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="insert" class="btn btn-primary" onclick="fnInsert()">Adicionar</button>
+                    <button type="button" id="update" class="btn btn-primary" onclick="fnUpdate()">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Tabela -->
+
+    <table id="viewValues" class="table table-striped" style="width:100%">
+    </table>
+</body>

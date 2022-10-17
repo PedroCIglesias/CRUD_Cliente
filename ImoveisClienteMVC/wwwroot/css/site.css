@@ -1,0 +1,40 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.lowOp {
+    opacity: 0.8;
+    font-size: 12px;
+}
+
+.navText {
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    opacity: 0.8;
+}
+
+.active {
+    text-decoration: underline #00ffff;
+}
