@@ -76,15 +76,16 @@ function filterGlobal() {
     ).draw();
 }
 
-function fnEdit(clienteId) {
+function fnEdit(imovelId) {
     $('#addImovelModal').modal('toggle');
+    $("#imovelId").val(imovelId);
 
     $.ajax({
         type: "POST",
         url: "Imovel/Edit",
         datatype: "json",
         contentType: "application/json: charset=utf-8",
-        data: JSON.stringify(clienteId),
+        data: JSON.stringify(imovelId),
         success: function (json) {
             var arrval = json.htmlValues;
 
